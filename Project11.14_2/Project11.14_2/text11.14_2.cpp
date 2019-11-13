@@ -64,23 +64,23 @@ int main()
 判断闰年
 int  runnian(int x)
 {
-	if ((x % 4 == 0 && x % 100 != 0)|| (x % 400 == 0))
-	
+	if ((x % 4 == 0 && x % 100 != 0) || (x % 400 == 0))
+
 		return 1;
-	
+
 	else
-	
+
 		return 0;
-	
+
 }
 
 int main()
 {
-	int year=0;
+	int year = 0;
 	int t = 0;
 	printf("请输入一个闰年：");
 	scanf("%d", &year);
-	t=runnian(year);
+	t = runnian(year);
 	if (t == 1)
 	{
 		printf("%d 是闰年\n", year);
@@ -109,7 +109,7 @@ void reverse(int arr[], int len)
 {
 	int i;
 	printf("数组逆置\n");
-	int left=0, right=len-1;
+	int left = 0, right = len - 1;
 	while (left < right)
 	{
 		int t = arr[left];
@@ -117,7 +117,7 @@ void reverse(int arr[], int len)
 		arr[right] = t;
 		left++;
 		right--;
-		
+
 	}
 
 }
@@ -135,7 +135,7 @@ void empty(int arr[], int len)
 int main()
 {
 	int arr[10];
-	int i,len;
+	int i, len;
 	len = sizeof(arr) / sizeof(arr[0]);
 	init(arr, len);
 	reverse(arr, len);
@@ -161,12 +161,12 @@ int prime(int j)
 		}
 	}
 	return 1;
-	
+
 }
 
 int main()
 {
-	int j=0;
+	int j = 0;
 	scanf("%d", &j);
 	if (prime(j))
 	{
