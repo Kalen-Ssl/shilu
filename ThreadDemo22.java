@@ -1,6 +1,6 @@
 package tang;
 
-public class ThreadDemo2 {
+public class ThreadDemo22 {
     private static long count = 100_0000_0000L;
 
     public static void main(String[] args) {
