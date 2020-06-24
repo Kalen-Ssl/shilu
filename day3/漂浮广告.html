@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="left:200px;top:100px; position:absolute;" id="dvAdv">
+			<img src="img/img/cs10006.jpg" width="250" height="350"/>
+		</div>
+		
+		<input type="button" value="水平移动" onclick="move()"/>
+		<input type="button" value="垂直移动" onclick="move2()"/>
+	</body>
+</html>
+
+
+<script>
+	function move(){
+		var dv=document.getElementById("dvAdv");
+		var left=dv.style.left;
+		left=parseInt(left);
+		if(left>1024 || left<=0){
+			dx = -dx;
+		}
+		left=left+10+"px";
+		dv.style.left=left;
+		console.log(left);
+		setTimeout("move()",100);
+	}
+//	move();
+    function move2(){
+		var dv=document.getElementById("dvAdv");
+		var top=dv.style.top;
+		top=parseInt(top);
+		if(top>1024 || top<=0){
+			dy = -dy;
+		}
+		top=top+10+"px";
+		dv.style.top=top;
+		console.log(top);
+		setTimeout("move2()",100);
+	}
+
+	
+</script>

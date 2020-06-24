@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定时弹幕</title>
+	</head>
+	<body>
+		<div id="dvWelcome" style="text-align: center;"></div>
+	</body>
+</html>
+<script>
+	var msg = "陈卓璇！！！！！！！";
+	var i=1;
+	function show(){
+		var showMsg = msg.substr(0,i);
+		i++;
+		if(i>msg.length){
+			i=0;
+		}
+		document.getElementById("dvWelcome").innerHTML = showMsg;
+		setTimeout("show()",1000);
+	}
+	show();
+</script>
