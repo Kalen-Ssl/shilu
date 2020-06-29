@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		姓名：<input type="text" name="mytxt" id="txt1"/><br>
+		性别：<input type="text" name="mytxt" id="txt1"/><br>
+		年龄：<input type="text" name="mytxt" id="txt1"/><br>
+		<input type="button" value="重置" onclick="findBtn()">
+	</body>
+</html>
+
+<script>
+	function findBtn(){
+		var txts = document.getElementsByTagName("input");
+		for(var i = 0; i < txts.length; i++){
+			if(txts[i].type == "text"){
+				txts[i].value = "";
+			}
+		}
+	}
+</script>
