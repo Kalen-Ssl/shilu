@@ -1,0 +1,64 @@
+DROP TABLE IF EXISTS USER;
+CREATE TABLE USER(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  NAME VARCHAR(20) COMMENT '姓名',
+  age INT COMMENT '年龄',
+  email VARCHAR(20) COMMENT '邮箱',
+  sex VARCHAR(1) COMMENT '性别'
+);
+
+-- 将学生表中的所有信息复制到用户表
+INSERT INTO USER(NAME,email) SELECT NAME,email FROM student;
+
+CREATE TABLE sc(
+  id INT,
+  NAME VARCHAR(20),
+  chinese DECIMAL(3,1),
+  math DECIMAL(3,1),
+  english DECIMAL(3,1)
+);
+
+
+
+INSERT INTO sc VALUE (1,'张三',80,91,70);
+INSERT INTO sc VALUE (2,'admin',80.5,97,91);
+INSERT INTO sc VALUE (3,'李四',60,39,80);
+INSERT INTO sc VALUE (4,'王五',80,23,43),(5,'root',70,30,40);
+
+
+SELECT * FROM sc;
+SELECT NAME FROM sc;
+
+SELECT math FROM sc;
+SELECT DISTINCT math FROM sc;
+SELECT DISTINCT chinese FROM sc;
+
+SELECT math FROM sc ORDER BY math;
+SELECT math FROM sc ORDER BY math DESC;
+
+SELECT NAME,math FROM sc WHERE math>90;
+
+SELECT * FROM sc WHERE math>90 OR chinese>80 AND english>70;
+
+SELECT NAME,math FROM sc WHERE math BETWEEN 70 AND 80;
+SELECT NAME,math FROM sc WHERE math IN (78,90,80,97);
+
+SELECT NAME FROM sc WHERE NAME LIKE '孙%';
+SELECT NAME FROM sc WHERE NAME LIKE '孙_';
+
+SELECT *FROM sc LIMIT 3;
+SELECT* FROM sc LIMIT 2,2;
+UPDATE sc SET math='60' WHERE NAME='root';
+
+DELETE FROM sc WHERE id=4;
+DELETE FROM sc;
+
+
+
+
+
+
+
+
+
+
