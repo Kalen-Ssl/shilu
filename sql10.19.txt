@@ -1,0 +1,64 @@
+-- sql1 查找最晚入职员工的所有信息
+select * from employees
+order by hire_date desc limit 1
+
+select * from employees
+where hire_date=(select max(hire_date) from employees);
+
+
+
+-- sql2 查找入职员工时间排名倒数第三的员工所有信息
+select * from employees
+where hire_date=(select distinct hire_date from employees
+                order by hire_date  desc limit 2,1);
+				
+				
+-- sql3 查找各个部门当前领导当前薪水详情以及其对应部门编号dept_no
+select s.*,d.dept_no 
+from salaries as s join
+dept_manager as d
+on s.emp_no=d.emp_no where
+s.to_date='9999-01-01' and
+d.to_date='9999-01-01'
+
+
+-- sql4 查找所有已经分配部门的员工的last_name和first_name
+select last_name,first_name,dept_no 
+from dept_emp ,employees
+where  dept_emp .emp_no=employees .emp_no
+
+
+-- sql5 查找所有员工的last_name和first_name以及对应部门编号dept_no	
+select employees.last_name,employees.first_name,dept_emp.dept_no 
+from employees left join  dept_emp
+on  dept_emp.emp_no=employees.emp_no
+
+
+-- sql6 查找所有员工入职时候的薪水情况
+select employees.emp_no,salaries.salary 
+from employees join
+salaries on employees.emp_no=salaries.emp_no 
+where salaries.from_date=employees.hire_date
+order by employees.emp_no desc; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
